@@ -1,4 +1,4 @@
-Date,5. adjusted close,6. volume,direction,Symbol
+Date,adjusted_close,volume,direction,Symbol
 2020-01-31,100.436,30332660,0,AMZN
 2020-01-24,93.082,13110822,1,AMZN
 2020-01-17,93.236,15753709,0,AMZN
