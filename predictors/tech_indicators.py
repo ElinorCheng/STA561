@@ -143,17 +143,19 @@ def calculate_mfi(df,period=14):
     negative_flow = np.where(typical_price < typical_price.shift(1).fillna(method='bfill'), money_flow, 0)
    
     # Calculate the money flow ratio
-    positive_flow,negative_flow = pd.Series(positive_flow).rolling(window=period).sum(),pd.Series(negative_flow).rolling(window=period).sum()
     raw_mfr = positive_flow / negative_flow
-    mfi = pd.Series(np.where(negative_flow == 0, 100, 100 - (100 / (1 + raw_mfr))))
+    mfr = pd.Series(np.where(negative_flow == 0, 100, 100 - (100 / (1 + raw_mfr))))
 
     # Calculate the MFI
-    #mfi = mfr.rolling(window=period).mean()
+    mfi = mfr.rolling(window=period).mean()
 
     # Add MFI values to the DataFrame
+    df['mfr'] = mfr
     df['mfi'] = mfi
+    df['negative_flow'] = negative_flow
+    df['positive_flow'] = positive_flow
 
-    return df.loc[:,'mfi']
+    return df.loc[:,['mfr','negative_flow','positive_flow']]
 
 
 
