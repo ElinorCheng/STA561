@@ -120,10 +120,8 @@ def calculate_rsi(df, period=14):
 def calculate_mfi(df,period=14):
     """
     Calculates the money flow index (MFI) of a DataFrame.
-
     Parameters:
     period (int): Number of periods to use for the MFI calculation.
-
     Returns:
     pandas.DataFrame: DataFrame containing the MFI values.
     """
@@ -135,7 +133,7 @@ def calculate_mfi(df,period=14):
     # Calculate typical price
     typical_price = (df['close'] + df['low'] + df['high']) / 3
 
-     # Calculate raw money flow
+    # Calculate raw money flow
     money_flow = typical_price * df['volume']
 
     # Get positive and negative money flow
@@ -246,3 +244,59 @@ def calc_AD(df):
 
 
 
+
+
+def calculate_macd(df, ema_short=12, ema_long=26, signal_period=9):
+    # df = get_daily_adjusted_prices(symbol)
+    df["close"] = pd.to_numeric(df["close"])
+    # Calculate the short-term and long-term EMAs
+    ema_short = df['close'].ewm(span=ema_short, adjust=False).mean()
+    ema_long = df['close'].ewm(span=ema_long, adjust=False).mean()
+    
+    # Calculate the MACD line and the signal line
+    macd_line = ema_short - ema_long
+    signal_line = macd_line.ewm(span=signal_period, adjust=False).mean()
+    
+    # Calculate the MACD histogram
+    macd_histogram = macd_line - signal_line
+    
+    # Return a DataFrame with the MACD values
+    macd_df = pd.DataFrame({
+        'MACD': macd_line,
+        'Signal': signal_line,
+        'Histogram': macd_histogram
+    }, index=df.index)
+    
+    return macd_df
+
+def calculate_vwap(df, period = 14):
+    df["close"] = pd.to_numeric(df["close"])
+    df["low"] = pd.to_numeric(df["low"])
+    df["high"] = pd.to_numeric(df["high"])
+    df["volume"] = pd.to_numeric(df["volume"])
+
+    # Calculate the typical price for each period
+    tp = (df['high'] + df['low'] + df['close']) / 3
+
+    # Multiply the typical price by the volume for each period
+    vtp = tp * df['volume']
+
+    # Calculate the cumulative sum of the volume times the typical price
+    cum_vtp = vtp.cumsum()
+
+    # Calculate the cumulative sum of the volume
+    cum_vol = df['volume'].cumsum()
+
+    # Calculate the VWAP for each period
+    vwap = cum_vtp / cum_vol
+
+    # Create a DataFrame to hold the results
+    results = pd.DataFrame({
+        'vwap': vwap[period-1:],
+        'date': df['Date'][period-1:]
+    }, index=df.index)
+
+    # Set the index to the start time
+    # results.set_index('date', inplace=True)
+
+    return results
