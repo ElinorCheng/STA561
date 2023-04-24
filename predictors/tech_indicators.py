@@ -135,28 +135,25 @@ def calculate_mfi(df,period=14):
     # Calculate typical price
     typical_price = (df['close'] + df['low'] + df['high']) / 3
 
-    # Calculate raw money flow
+     # Calculate raw money flow
     money_flow = typical_price * df['volume']
 
     # Get positive and negative money flow
     positive_flow = np.where(typical_price > typical_price.shift(1).fillna(method='bfill'), money_flow, 0)
     negative_flow = np.where(typical_price < typical_price.shift(1).fillna(method='bfill'), money_flow, 0)
-   
+
     # Calculate the money flow ratio
+    positive_flow,negative_flow = pd.Series(positive_flow).rolling(window=period).sum(),pd.Series(negative_flow).rolling(window=period).sum()
     raw_mfr = positive_flow / negative_flow
-    mfr = pd.Series(np.where(negative_flow == 0, 100, 100 - (100 / (1 + raw_mfr))))
+    mfi = pd.Series(np.where(negative_flow == 0, 100, 100 - (100 / (1 + raw_mfr))))
 
     # Calculate the MFI
-    mfi = mfr.rolling(window=period).mean()
+    #mfi = mfr.rolling(window=period).mean()
 
     # Add MFI values to the DataFrame
-    df['mfr'] = mfr
     df['mfi'] = mfi
-    df['negative_flow'] = negative_flow
-    df['positive_flow'] = positive_flow
 
-    return df.loc[:,['mfr','negative_flow','positive_flow']]
-
+    return df.loc[:,'mfi']
 
 
 # 6. SAR 
