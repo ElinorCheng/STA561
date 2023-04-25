@@ -6,7 +6,8 @@ def merge_predictors(stock,freq):
     path = 'predictors/'
     Funda = path+'FundaIndicators/'+freq+'/'+stock+'.csv'
     Macro = path+'Macro/'+freq+'/'+stock+'.csv'
-    Tech = path+'Tech/'+freq+'_PCA/'+stock+'.csv'
+    #Tech = path+'Tech/'+freq+'_PCA/'+stock+'.csv'
+    Tech = path+'Tech/'+freq+'/'+stock+'.csv'
 
     Funda_stock = pd.read_csv(Funda)
     Macro_stock = pd.read_csv(Macro)
