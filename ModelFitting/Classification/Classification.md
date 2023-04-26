@@ -56,5 +56,5 @@
 5. Models:
     We trained SVM, Random Forest and Logistic Regression. For each models, we combined with forward feature selection methods. Combinations are as followings:
     - SVM 'SVM.ipynb'
-    - Random Forest 'Random_Forest.ipynb'
+    - Random Forest & XGboost 'Random_Forest.ipynb'
     - Logistic Regression 'Logistic_Regression.ipynb'
