@@ -1,16 +1,16 @@
 # Classification Instruction Notebook
 
 ## For the Classification part, we construct the following structure to show our work:
-1. We generally fit the dependent variable named 'Direction', which is constructed throught $ \textbf{1}_{(AdjustedClosePrice_{t} - AdjustedClosePrice_{t-1}) > 0} $. The result is not ideal for the classification model.
-2. We create a new depdendent variable named ’Direction2‘, which is constructed throught $ \textbf{1}_{(AdjustedClosePrice_{t+13} - AdjustedClosePrice_{t-1}) > 0} $. Use the classification model to fit it. The result improved a lot.
+1. We generally fit the dependent variable named 'Direction', which is constructed throught $ \textbf{1} _{(AdjustedClosePrice_{t} - AdjustedClosePrice_{t-1}) > 0} $. The result is not ideal for the classification model.
+2. We create a new depdendent variable named ’Direction2‘, which is constructed throught $ \textbf{1} _{(AdjustedClosePrice_{t+13} - AdjustedClosePrice_{t-1}) > 0} $. Use the classification model to fit it. The result improved a lot.
 3. So, we want to do the feature selection, which should investigate the best subset to show the power of classification prediction for each stocks.
 4. We apply the same investigation on the weekly and monthly frequencies. For each model, the fitting results varys. 
 
 
 ## Model Fitting Details
 1. Dependent variables: 
-    - Direction: $ \textbf{1}_{(AdjustedClosePrice_{t} - AdjustedClosePrice_{t-1}) > 0} $
-    - Direction 2: $ \textbf{1}_{(AdjustedClosePrice_{t+13} - AdjustedClosePrice_{t-1}) > 0} $
+    - Direction: $ \textbf{1} _{(AdjustedClosePrice_{t} - AdjustedClosePrice_{t-1}) > 0} $
+    - Direction 2: $ \textbf{1} _{(AdjustedClosePrice_{t+13} - AdjustedClosePrice_{t-1}) > 0} $
 
 2. Predictors: all the dataset at the time t.
 
