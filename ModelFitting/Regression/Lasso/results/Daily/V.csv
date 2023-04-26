@@ -1,7 +1,0 @@
-AAPL,MSFT,GOOG,AMZN,NVDA,BRK-B,TSLA,META,JNJ,V
-PEG_trailing,cpi,gdpr2,sale_nwc,dpr,cpi,de_ratio,bond20yr,bond20yr,npm
-inv_turn,cpir,bond30yr,STOCH_k,cash_ratio,MFI,cash_ratio,fedfunds,fedfunds,gdpr1
-EMA,STOCH_k,EMA,STOCK_d,inv_turn,SPY,sale_nwc,cpir,cpir,gdpr2
-STOCH_k,AD,MFI,MFI,bond30yr,Neu_lag1,bond20yr,STOCH_k,employ,employ
-AD,MACD_Signal,MACD,NDAQ,STOCH_k,Neu_lag2,bond30yr,MACD,STOCH_k,SPY
-MACD_Histo,VWAP,MACD_Histo,Neu_lag2,STOCK_d,Neu_lag3,STOCH_k,MACD_Signal,NDAQ,Neg_lag3
