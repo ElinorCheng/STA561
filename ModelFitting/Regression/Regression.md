@@ -38,6 +38,16 @@
 4. Feature Selection:
     The feature selection method is the forward selection. Under the regression problem, we use the MSE as the scoring method to select the best feature subsets. We go through different feature amounts to select the best feature amounts to make the regression prediction. The optimal feature numbers will vary depends on the model.
 
+    - Technique Details:
+    We divide the whole dataset into train dataset and test dataset using the function:
+
+            X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,shuffle=False)
+    
+        For the X_train and y_train, we apply the time series cross validation method to select the best feature subsets. 
+        
+        Then, we evaluate the model using the X_test and y_test to try our best to reduce the overfiting problem.
+
+
 5. Models:
     We trained Lasso, Ridge Regression and SVR models. For each models, we combined with different feature selection methods. Combinations are as followings:
     - Lasso with Forward Selection 'Lasso.ipynb';
