@@ -9,14 +9,14 @@
 5. Conclusion part: for each model, we make an conclusion for it to let readers understand what we do and our expectation.
 
 ## Model Fitting Details
-1. Dependent variables: adjusted close price_{t+1} assuming current time is t.
-2. Predictors: all the dataset at the time t.
+1. Dependent variables:  ${adjusted\,close\,price} _{t+1}$ assuming current time is $t$.
+2. Predictors: all the dataset at the time $t$.
 3. Time Series Cross Validation:
     - Why we do not use the traditional cross validation method? 
-    
+  
     Because they will shuffle the time to make the prediction, which may lead to one situation:
     
-    - we will train data from future(t+1,t+2,t+3) to predict current dataset (t)
+    - we will train data from future $(t+1,t+2,t+3)$ to predict current dataset $(t)$
     So, we use the time series cross validation method to train our model:
 
                 from sklearn.model_selection import TimeSeriesSplit
