@@ -39,12 +39,22 @@
 
 
 4. Feature Selection:
-    The feature selection method is the forward selection. Under the regression problem, we use the MSE as the scoring method to select the best feature subsets. We go through different feature amounts to select the best feature amounts to make the regression prediction. The optimal feature numbers will vary depends on the model.
+    The feature selection method is the forward selection. Under the regression problem, we use the weighted F1-score as the scoring method to select the best feature subsets. We let the function to decide which number would be an optimal number for each stocks under each models. After that, the investigate the feature selection statistics.
+    - Why weighted F1-score? It takes F1-score under each classes into consideration. If the F1-score for each class is not balanced. The evaluation method will add penalties the final classification result, which will decrease the performance score. 
+
+    - Technique Details:
+    We divide the whole dataset into train dataset and test dataset using the function:
+
+            X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,shuffle=False)
+    
+        For the X_train and y_train, we apply the time series cross validation method to select the best feature subsets. 
+        
+        Then, we evaluate the model using the X_test and y_test to try our best to reduce the overfiting problem.
 
 
 
 5. Models:
-    We trained Lasso, Ridge Regression and SVR models. For each models, we combined with different feature selection methods. Combinations are as followings:
-    - Lasso with Forward Selection 'Lasso.ipynb';
-    - Ridge with Forward Selection 'Ridge.ipynb';
-    - Lasso with PCA 'Lasso_KnnPca.ipynb';
+    We trained SVM, Random Forest and Logistic Regression. For each models, we combined with forward feature selection methods. Combinations are as followings:
+    - SVM 'SVM.ipynb'
+    - Random Forest 'Random_Forest.ipynb'
+    - Logistic Regression 'Logistic_Regression.ipynb'
