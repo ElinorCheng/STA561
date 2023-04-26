@@ -38,3 +38,8 @@
 4. Feature Selection:
     The feature selection method is the forward selection. Under the regression problem, we use the MSE as the scoring method to select the best feature subsets. We go through different feature amounts to select the best feature amounts to make the regression prediction. The optimal feature numbers will vary depends on the model.
 
+5. Models:
+    We trained Lasso, Ridge Regression and SVR models. For each models, we combined with different feature selection methods. Combinations are as followings:
+    - Lasso with Forward Selection 'Lasso.ipynb';
+    - Ridge with Forward Selection 'Ridge.ipynb';
+    - Lasso with PCA 'Lasso_KnnPca.ipynb';
