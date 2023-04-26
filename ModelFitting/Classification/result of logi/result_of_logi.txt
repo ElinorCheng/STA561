@@ -1,0 +1,300 @@
+AAPL / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00       214
+         1.0       0.66      1.00      0.80       420
+
+    accuracy                           0.66       634
+   macro avg       0.33      0.50      0.40       634
+weighted avg       0.44      0.66      0.53       634
+
+AAPL / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00        43
+         1.0       0.67      1.00      0.81        89
+
+    accuracy                           0.67       132
+   macro avg       0.34      0.50      0.40       132
+weighted avg       0.45      0.67      0.54       132
+
+AAPL / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00         9
+         1.0       0.70      1.00      0.82        21
+
+    accuracy                           0.70        30
+   macro avg       0.35      0.50      0.41        30
+weighted avg       0.49      0.70      0.58        30
+
+MSFT / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.29      0.97      0.44       182
+         1.0       0.69      0.02      0.05       452
+
+    accuracy                           0.30       634
+   macro avg       0.49      0.50      0.24       634
+weighted avg       0.57      0.30      0.16       634
+
+MSFT / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       0.33      0.46      0.39        35
+         1.0       0.77      0.67      0.72        97
+
+    accuracy                           0.61       132
+   macro avg       0.55      0.56      0.55       132
+weighted avg       0.66      0.61      0.63       132
+
+MSFT / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00         7
+         1.0       0.77      1.00      0.87        23
+
+    accuracy                           0.77        30
+   macro avg       0.38      0.50      0.43        30
+weighted avg       0.59      0.77      0.67        30
+
+GOOG / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.35      0.58      0.43       151
+         1.0       0.46      0.25      0.32       217
+
+    accuracy                           0.38       368
+   macro avg       0.40      0.41      0.38       368
+weighted avg       0.41      0.38      0.37       368
+
+GOOG / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00        30
+         1.0       0.61      1.00      0.75        46
+
+    accuracy                           0.61        76
+   macro avg       0.30      0.50      0.38        76
+weighted avg       0.37      0.61      0.46        76
+
+GOOG / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00         7
+         1.0       0.61      1.00      0.76        11
+
+    accuracy                           0.61        18
+   macro avg       0.31      0.50      0.38        18
+weighted avg       0.37      0.61      0.46        18
+
+AMZN / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.35      0.92      0.51       230
+         1.0       0.37      0.03      0.05       404
+
+    accuracy                           0.35       634
+   macro avg       0.36      0.47      0.28       634
+weighted avg       0.36      0.35      0.22       634
+
+AMZN / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00        46
+         1.0       0.65      1.00      0.79        86
+
+    accuracy                           0.65       132
+   macro avg       0.33      0.50      0.39       132
+weighted avg       0.42      0.65      0.51       132
+
+AMZN / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       0.33      0.20      0.25        10
+         1.0       0.67      0.80      0.73        20
+
+    accuracy                           0.60        30
+   macro avg       0.50      0.50      0.49        30
+weighted avg       0.56      0.60      0.57        30
+
+NVDA / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00       241
+         1.0       0.62      1.00      0.77       393
+
+    accuracy                           0.62       634
+   macro avg       0.31      0.50      0.38       634
+weighted avg       0.38      0.62      0.47       634
+
+NVDA / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00        49
+         1.0       0.63      1.00      0.77        83
+
+    accuracy                           0.63       132
+   macro avg       0.31      0.50      0.39       132
+weighted avg       0.40      0.63      0.49       132
+
+NVDA / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00        11
+         1.0       0.63      1.00      0.78        19
+
+    accuracy                           0.63        30
+   macro avg       0.32      0.50      0.39        30
+weighted avg       0.40      0.63      0.49        30
+
+BRK-B / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00       259
+         1.0       0.59      1.00      0.74       375
+
+    accuracy                           0.59       634
+   macro avg       0.30      0.50      0.37       634
+weighted avg       0.35      0.59      0.44       634
+
+BRK-B / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       0.50      0.04      0.07        54
+         1.0       0.59      0.97      0.74        78
+
+    accuracy                           0.59       132
+   macro avg       0.55      0.51      0.40       132
+weighted avg       0.56      0.59      0.46       132
+
+BRK-B / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00        13
+         1.0       0.57      1.00      0.72        17
+
+    accuracy                           0.57        30
+   macro avg       0.28      0.50      0.36        30
+weighted avg       0.32      0.57      0.41        30
+
+TSLA / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00       314
+         1.0       0.48      1.00      0.65       290
+
+    accuracy                           0.48       604
+   macro avg       0.24      0.50      0.32       604
+weighted avg       0.23      0.48      0.31       604
+
+TSLA / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       1.00      0.06      0.11        67
+         1.0       0.48      1.00      0.65        58
+
+    accuracy                           0.50       125
+   macro avg       0.74      0.53      0.38       125
+weighted avg       0.76      0.50      0.36       125
+
+TSLA / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       1.00      0.12      0.22        16
+         1.0       0.48      1.00      0.65        13
+
+    accuracy                           0.52        29
+   macro avg       0.74      0.56      0.44        29
+weighted avg       0.77      0.52      0.41        29
+
+META / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.45      0.92      0.60       214
+         1.0       0.61      0.10      0.18       271
+
+    accuracy                           0.46       485
+   macro avg       0.53      0.51      0.39       485
+weighted avg       0.54      0.46      0.36       485
+
+META / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       0.83      0.11      0.19        47
+         1.0       0.56      0.98      0.71        54
+
+    accuracy                           0.57       101
+   macro avg       0.70      0.54      0.45       101
+weighted avg       0.69      0.57      0.47       101
+
+META / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00        12
+         1.0       0.48      1.00      0.65        11
+
+    accuracy                           0.48        23
+   macro avg       0.24      0.50      0.32        23
+weighted avg       0.23      0.48      0.31        23
+
+JNJ / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00       257
+         1.0       0.59      1.00      0.75       377
+
+    accuracy                           0.59       634
+   macro avg       0.30      0.50      0.37       634
+weighted avg       0.35      0.59      0.44       634
+
+JNJ / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       0.38      0.64      0.47        50
+         1.0       0.62      0.35      0.45        82
+
+    accuracy                           0.46       132
+   macro avg       0.50      0.50      0.46       132
+weighted avg       0.53      0.46      0.46       132
+
+JNJ / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00        14
+         1.0       0.53      1.00      0.70        16
+
+    accuracy                           0.53        30
+   macro avg       0.27      0.50      0.35        30
+weighted avg       0.28      0.53      0.37        30
+
+V / Daily 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00       175
+         1.0       0.72      1.00      0.84       459
+
+    accuracy                           0.72       634
+   macro avg       0.36      0.50      0.42       634
+weighted avg       0.52      0.72      0.61       634
+
+V / Weekly 
+               precision    recall  f1-score   support
+
+         0.0       0.75      0.09      0.17        32
+         1.0       0.77      0.99      0.87       100
+
+    accuracy                           0.77       132
+   macro avg       0.76      0.54      0.52       132
+weighted avg       0.77      0.77      0.70       132
+
+V / Monthly 
+               precision    recall  f1-score   support
+
+         0.0       0.00      0.00      0.00         8
+         1.0       0.73      1.00      0.85        22
+
+    accuracy                           0.73        30
+   macro avg       0.37      0.50      0.42        30
+weighted avg       0.54      0.73      0.62        30
+
