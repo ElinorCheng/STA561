@@ -1,0 +1,6 @@
+,AAPL,AMZN,BRK-B,GOOG,JNJ,META,MSFT,NVDA,TSLA,V
+0,inv_turn,sale_nwc,cpi,gdpr2,fedfunds,bond20yr,cpi,cash_ratio,cash_ratio,gdpr2
+1,EMA,STOCH_k,MFI,bond30yr,cpir,fedfunds,cpir,inv_turn,sale_nwc,bond20yr
+2,STOCH_k,MFI,SPY,EMA,employ,STOCH_k,STOCH_k,bond30yr,bond20yr,cpir
+3,AD,NDAQ,Neu_lag2,MACD,STOCH_k,MACD,AD,STOCH_k,bond30yr,employ
+4,MACD_Histo,Neu_lag2,Neu_lag3,MACD_Histo,NDAQ,MACD_Signal,VWAP,STOCK_d,STOCH_k,MFI
