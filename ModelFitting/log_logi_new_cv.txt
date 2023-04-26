@@ -1,60 +1,60 @@
 AAPL / Daily 
- Average F1-score: 0.39561267954824947
+ Average F1-score: 0.39909676611587014
 AAPL / Weekly 
- Average F1-score: 0.4613998298861755
+ Average F1-score: 0.43881124533346344
 AAPL / Monthly 
- Average F1-score: 0.5776786186172583
+ Average F1-score: 0.5336534613845538
 MSFT / Daily 
- Average F1-score: 0.5316117934990437
+ Average F1-score: 0.2502668966620582
 MSFT / Weekly 
- Average F1-score: 0.5547447777919335
+ Average F1-score: 0.451824759271628
 MSFT / Monthly 
- Average F1-score: 0.6125475831358184
+ Average F1-score: 0.4783137444624681
 GOOG / Daily 
- Average F1-score: 0.6272776740903926
+ Average F1-score: 0.468000764908294
 GOOG / Weekly 
- Average F1-score: 0.4261549401526114
+ Average F1-score: 0.453976713235656
 GOOG / Monthly 
- Average F1-score: 0.6249990162092933
+ Average F1-score: 0.4905016552075376
 AMZN / Daily 
- Average F1-score: 0.43161826370805983
+ Average F1-score: 0.21413151823541884
 AMZN / Weekly 
- Average F1-score: 0.5690397974233727
+ Average F1-score: 0.3819526179860729
 AMZN / Monthly 
- Average F1-score: 0.5050701672728038
+ Average F1-score: 0.5927763725636066
 NVDA / Daily 
- Average F1-score: 0.4850630473436053
+ Average F1-score: 0.4486712380104292
 NVDA / Weekly 
- Average F1-score: 0.5133070239896819
+ Average F1-score: 0.38622222365582665
 NVDA / Monthly 
- Average F1-score: 0.4113513071895425
+ Average F1-score: 0.44224069114825415
 BRK-B / Daily 
- Average F1-score: 0.4822983376411361
+ Average F1-score: 0.44362791125683315
 BRK-B / Weekly 
- Average F1-score: 0.5065683985902815
+ Average F1-score: 0.3686022527420659
 BRK-B / Monthly 
- Average F1-score: 0.6103909430657152
+ Average F1-score: 0.4315352102586145
 TSLA / Daily 
- Average F1-score: 0.4918272371113248
+ Average F1-score: 0.3582610650547398
 TSLA / Weekly 
- Average F1-score: 0.42689710836269823
+ Average F1-score: 0.3696180550528559
 TSLA / Monthly 
- Average F1-score: 0.3247778046917215
+ Average F1-score: 0.330053071364047
 META / Daily 
- Average F1-score: 0.33460921610519256
+ Average F1-score: 0.3591124360956767
 META / Weekly 
- Average F1-score: 0.5464872373733102
+ Average F1-score: 0.411130093066153
 META / Monthly 
- Average F1-score: 0.719610649843208
+ Average F1-score: 0.5398110661268556
 JNJ / Daily 
- Average F1-score: 0.3184112983778339
+ Average F1-score: 0.40326761858835963
 JNJ / Weekly 
- Average F1-score: 0.5904916606548828
+ Average F1-score: 0.3384159069624
 JNJ / Monthly 
- Average F1-score: 0.4282628929116745
+ Average F1-score: 0.4892352685137507
 V / Daily 
- Average F1-score: 0.4019326572020983
+ Average F1-score: 0.4522005799709669
 V / Weekly 
- Average F1-score: 0.6510887947413041
+ Average F1-score: 0.5511412584656105
 V / Monthly 
- Average F1-score: 0.7215303215303216
+ Average F1-score: 0.6745209764817609
