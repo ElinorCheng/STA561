@@ -1,0 +1,7 @@
+AAPL,MSFT,GOOG,AMZN,NVDA,BRK-B,TSLA,META,JNJ,V
+roe,rd_sale,cpi,STOCH_k,pcf,dpr,npm,rd_sale,de_ratio,pcf
+rd_sale,accrual,EMA,RSI,PEG_trailing,de_ratio,accrual,fedfunds,rd_sale,roe
+bond30yr,bond20yr,MFI,MFI,STOCH_k,cash_ratio,gdpr1,SAR,gdpr1,curr_ratio
+cpir,STOCH_k,AD,AD,MFI,gdpr1,bond20yr,MACD,wpir,bond20yr
+RSI,SAR,Pos_lag3,Neu_lag1,Neg_lag2,STOCH_k,STOCH_k,Neg_lag3,STOCH_k,cpir
+AD,Neu_lag2,Neg_lag2,Neu_lag3,Neu_lag1,Pos_lag3,Neg_lag2,Neu_lag3,MFI,employ

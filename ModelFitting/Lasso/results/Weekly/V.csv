@@ -1,0 +1,7 @@
+AAPL,MSFT,GOOG,AMZN,NVDA,BRK-B,TSLA,META,JNJ,V
+cash_ratio,dpr,cash_ratio,de_ratio,curr_ratio,dpr,cpir,pay_turn,npm,roa
+rd_sale,STOCH_k,EMA,accrual,EMA,cash_ratio,wpir,sale_nwc,gdpr1,employ
+fedfunds,MFI,MACD_Histo,STOCH_k,STOCH_k,inv_turn,unemp,EMA,wpir,SAR
+wpir,SAR,NDAQ,MFI,MFI,AD,STOCH_k,RSI,employ,SPY
+AD,MACD_Histo,Pos_lag1,NDAQ,MACD,NDAQ,Neu_lag1,MACD_Histo,STOCH_k,Pos_lag2
+Pos_lag1,Neu_lag2,Neg_lag2,Neu_lag2,Pos_lag2,Neg_lag2,Neu_lag2,SPY,Neu_lag1,Neg_lag1
