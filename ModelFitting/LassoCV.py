@@ -100,7 +100,7 @@ if __name__ == "__main__":
             dates = price.Date.shift(-1).values[:len(X)]
             X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.25,shuffle=False)
             scores = []
-            for i in range(3,15,3):
+            for i in range(3,15,2):
                 y_pred, score_tst,score_tr,features = train_once(X,y, i)
                 print(score_tr)
                 scores.append(score_tr)
