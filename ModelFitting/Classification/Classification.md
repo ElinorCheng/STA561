@@ -1,22 +1,25 @@
-# Regression Instruction Notebook
+# Classification Instruction Notebook
 
-## For the regression part, we construct the following structure to show our work:
+## For the Classification part, we construct the following structure to show our work:
+1. We generally fit the dependent variable named 'Direction', which is constructed throught $\textbf{1}_{(AdjustedClosePrice_{t} - AdjustedClosePrice_{t-1}) > 0}$. The result is not ideal for the classification model.
+2. We create a new depdendent variable named ’Direction2‘, which is constructed throught $\textbf{1}_{(AdjustedClosePrice_{t+13} - AdjustedClosePrice_{t-1}) > 0}$. Use the classification model to fit it. The result improved a lot.
+3. So, we want to do the feature selection, which should investigate the best subset to show the power of classification prediction for each stocks.
+4. We apply the same investigation on the weekly and monthly frequencies. For each model, the fitting results varys. 
 
-1. Using the original model parameters to show the parameter tuning result based on the daily datasets.
-2. Combined the feature selection with the tuning parameters together to select the best number of features to be selected.
-3. Then, based on the feature selection, we want to know which features are selected for each models.
-4. Finally, we will apply similar logics into the weekly and monthly frequencies to investigate their model fitting results.
-5. Conclusion part: for each model, we make an conclusion for it to let readers understand what we do and our expectation.
 
 ## Model Fitting Details
-1. Dependent variables:  ${adjusted\,close\,price} _{t+1}$ assuming current time is $t$.
-2. Predictors: all the dataset at the time $t$.
+1. Dependent variables: 
+    - Direction: $\textbf{1}_{(AdjustedClosePrice_{t} - AdjustedClosePrice_{t-1}) > 0}$
+    - Direction 2: $\textbf{1}_{(AdjustedClosePrice_{t+13} - AdjustedClosePrice_{t-1}) > 0}$
+
+2. Predictors: all the dataset at the time t.
+
 3. Time Series Cross Validation:
     - Why we do not use the traditional cross validation method? 
-  
+    
     Because they will shuffle the time to make the prediction, which may lead to one situation:
     
-    - we will train data from future $(t+1,t+2,t+3)$ to predict current dataset $(t)$
+    - we will train data from future(t+1,t+2,t+3) to predict current dataset (t)
     So, we use the time series cross validation method to train our model:
 
                 from sklearn.model_selection import TimeSeriesSplit
@@ -38,14 +41,6 @@
 4. Feature Selection:
     The feature selection method is the forward selection. Under the regression problem, we use the MSE as the scoring method to select the best feature subsets. We go through different feature amounts to select the best feature amounts to make the regression prediction. The optimal feature numbers will vary depends on the model.
 
-    - Technique Details:
-    We divide the whole dataset into train dataset and test dataset using the function:
-
-            X_train,X_test,y_train,y_test = train_test_split(X,y,test_size=0.2,shuffle=False)
-    
-        For the X_train and y_train, we apply the time series cross validation method to select the best feature subsets. 
-        
-        Then, we evaluate the model using the X_test and y_test to try our best to reduce the overfiting problem.
 
 
 5. Models:
