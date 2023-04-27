@@ -1,0 +1,121 @@
+---
+title: "STA 561 Final Project"
+subtitle: "New York Times API Data Collection"
+format: 
+  html:
+    self-contained: true
+---
+
+<br/>
+
+### Setup
+
+```{r setup, include=FALSE}
+library(tidyverse)
+library(httr2)
+library(purrr)
+```
+
+-----
+### Getting data from the API
+
+```{r}
+get_nyt_articles = function(year1, month1, day1, year2, month2, day2, api_key) {
+  
+  # Sanity Check
+  if (!(month1 %in% seq(1,12,1)) | !(day1 %in% seq(1,31,1))){
+    stop("Please make sure the date you entered is valid.")
+  }
+  
+  if (!(month2 %in% seq(1,12,1)) | !(day2 %in% seq(1,31,1))){
+    stop("Please make sure the date you entered is valid.")
+  }
+  
+  base_url= paste0("https://api.nytimes.com/svc/search/v2/articlesearch.json?fq=document_type:(","article",")%20AND%20print_page:1%20AND%20print_section:(","A",")")
+  
+  # Format the final url
+  url = paste0(base_url,
+               "&begin_date=",sprintf("%04d", year1),sprintf("%02d", month1),sprintf("%02d",day1),
+               "&end_date=",sprintf("%04d", year2),sprintf("%02d", month2),sprintf("%02d",day2),
+               "&api-key=",api_key)
+  
+  resp1 = request(url) %>%
+    req_url_query(
+      page = 0, # page number start from 0
+      pageSize = 99 # Max pageSize number for pagination
+    ) %>%
+    req_perform()
+  
+  # If something went wrong, then stop
+  stopifnot(resp_status(last_response()) == 200)
+  
+  # Result of first page of API
+  result1 = resp1 %>%
+    resp_body_json() %>% 
+    tibble(result=.) %>%
+    slice(-c(1,2)) %>%
+    unnest_wider(result) %>%
+    select(docs) %>%
+    unnest(cols = docs) %>%
+    unnest_wider(col=docs)
+  
+  # Pagination. Find total number of results
+  jsonfile = resp1 %>%
+    resp_body_json()
+  
+  page = jsonfile$response$meta$hits
+  
+  # Find the total number of pages using the round up function
+  n_pages = ceiling(page/10)
+  
+  # Denote the complete results
+  all = result1
+  
+  if (n_pages > 1) {
+    for (i in 1:n_pages-1){
+      
+      # Handle timeouts
+      Sys.sleep(6)
+      
+      resp = request(url) %>%
+        req_url_query(
+          page = i,
+          pageSize = 99 
+        ) %>%
+        req_perform()
+      
+      result = resp %>%
+        resp_body_json() %>% 
+        tibble(result=.) %>%
+        slice(-c(1,2)) %>%
+        unnest_wider(result) %>%
+        select(docs) %>%
+        unnest(cols = docs) %>%
+        unnest_wider(col=docs)
+      
+      all = bind_rows(all, result)
+    }
+  }
+  
+  # Handle no results situation
+  else if (n_pages == 0) {
+    stop("There is no results for the date entered. Please try another date.")
+  }
+  
+  # Select the columns we need: pub_date, lead_paragraph, headline
+  all = all %>%
+    select(pub_date, lead_paragraph, headline) %>% 
+    na.omit() %>%
+    unnest_wider(headline) %>%
+    select(pub_date, lead_paragraph, main)
+  
+  write.csv(all, "API.csv", row.names=FALSE)
+}
+```
+
+```{r}
+# Get data from 2010.01.01 to 2020.01.01
+data = get_nyt_articles(2010,01,01,2010,01,03,"EHfscnErSZ7eLiKXG5IA0w4HAnZdpeak")
+#    = get_nyt_articles(start_year,start_month,start_day,end_year,end_month,end_day)
+```
+
